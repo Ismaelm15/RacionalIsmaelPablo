@@ -100,5 +100,11 @@ public class Racional {
         resultado.denominador=random.nextInt(100)+1;
         return resultado;
     }
-
+    public static boolean igualdad(Racional x, Racional y) {
+    boolean igualdad=false;
+     if ((x.nominador*y.denominador)==(x.denominador*y.nominador)){
+     igualdad=true;
+     }
+        return igualdad;
+    }
 }
