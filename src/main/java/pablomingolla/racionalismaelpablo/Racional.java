@@ -5,6 +5,8 @@
  */
 package pablomingolla.racionalismaelpablo;
 
+import java.util.Random;
+
 /**
  *
  * @author Pablo Mingolla
@@ -84,6 +86,19 @@ public class Racional {
         return resultado;
     }
     
+    public Racional division(Racional x, Racional y){
+        Racional resultado= new Racional();
+        resultado.nominador=x.nominador*y.denominador;
+        resultado.denominador=x.denominador*y.nominador;
+        return resultado;
+    }
     
+    public Racional aleatorio(){
+        Racional resultado=new Racional();
+        Random random=new Random();
+        resultado.nominador=random.nextInt(100);
+        resultado.denominador=random.nextInt(100)+1;
+        return resultado;
+    }
 
 }
