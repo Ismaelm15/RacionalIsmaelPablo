@@ -53,21 +53,21 @@ public class Racional {
         return "Numero racional " + nominador + "/" + denominador;
     }
 
-    public double suma(Racional objeto) {
+    public double suma(Racional x) {
         double resultado = 0;
-        if (this.denominador == objeto.denominador) {
-            resultado = (this.nominador + objeto.nominador) / this.denominador;
+        if (this.denominador == x.denominador) {
+            resultado = (this.nominador + x.nominador) / this.denominador;
         } else {
-            resultado = ((this.nominador * objeto.denominador) + (this.denominador * objeto.nominador)) / (this.denominador * objeto.denominador);
+            resultado = ((this.nominador * x.denominador) + (this.denominador * x.nominador)) / (this.denominador * x.denominador);
         }
 
         return resultado;
     }
 
-    public void producto(Racional objeto) {
+    public void producto(Racional x) {
 
-        this.nominador = this.nominador * objeto.nominador;
-        this.denominador = this.denominador * objeto.denominador;
+        this.nominador = this.nominador * x.nominador;
+        this.denominador = this.denominador * x.denominador;
     }
     
 }
