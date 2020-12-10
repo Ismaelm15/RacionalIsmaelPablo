@@ -20,9 +20,10 @@ public class Racional {
             System.out.println("Se ha introducido un denominador 0 por lo tanto"
                     + " su nuevo valor pasa a ser 1");
         } else {
-            this.nominador = nominador;
+            
             this.denominador = denominador;
         }
+        this.nominador = nominador;
 
     }
 
@@ -68,4 +69,5 @@ public class Racional {
         this.nominador = this.nominador * objeto.nominador;
         this.denominador = this.denominador * objeto.denominador;
     }
+    
 }
