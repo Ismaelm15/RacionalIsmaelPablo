@@ -20,7 +20,7 @@ public class Racional {
             System.out.println("Se ha introducido un denominador 0 por lo tanto"
                     + " su nuevo valor pasa a ser 1");
         } else {
-            
+
             this.denominador = denominador;
         }
         this.nominador = nominador;
@@ -53,21 +53,37 @@ public class Racional {
         return "Numero racional " + nominador + "/" + denominador;
     }
 
-    public double suma(Racional x) {
+    public double suma(Racional objeto) {
         double resultado = 0;
-        if (this.denominador == x.denominador) {
-            resultado = (this.nominador + x.nominador) / this.denominador;
+        if (this.denominador == objeto.denominador) {
+            resultado = (this.nominador + objeto.nominador) / this.denominador;
         } else {
-            resultado = ((this.nominador * x.denominador) + (this.denominador * x.nominador)) / (this.denominador * x.denominador);
+            resultado = ((this.nominador * objeto.denominador) + (this.denominador * objeto.nominador)) / (this.denominador * objeto.denominador);
         }
 
         return resultado;
     }
 
-    public void producto(Racional x) {
+    public void producto(Racional objeto) {
 
-        this.nominador = this.nominador * x.nominador;
-        this.denominador = this.denominador * x.denominador;
+        this.nominador = this.nominador * objeto.nominador;
+        this.denominador = this.denominador * objeto.denominador;
+    }
+
+    public void imprimirConsola() {
+        System.out.println(this.toString());
+    }
+
+    public double resta(Racional x) {
+        double resultado;
+        if (this.denominador == x.denominador) {
+            resultado = (this.nominador - x.nominador) / this.denominador;
+        } else {
+            resultado = ((this.nominador * x.denominador) - (this.denominador * x.nominador)) / (this.denominador * x.denominador);
+        }
+        return resultado;
     }
     
+    
+
 }
