@@ -10,17 +10,25 @@ package pablomingolla.racionalismaelpablo;
  * @author Pablo Mingolla
  */
 public class Racional {
+
     int nominador;
     int denominador;
 
     public Racional(int nominador, int denominador) {
-        this.nominador = nominador;
-        this.denominador = denominador;
+        if (denominador == 0) {
+            this.denominador = 1;
+            System.out.println("Se ha introducido un denominador 0 por lo tanto"
+                    + " su nuevo valor pasa a ser 1");
+        } else {
+            this.nominador = nominador;
+            this.denominador = denominador;
+        }
+
     }
 
     public Racional() {
-        this.nominador=1;
-        this.denominador=1;
+        this.nominador = 1;
+        this.denominador = 1;
     }
 
     public int getNominador() {
@@ -38,7 +46,26 @@ public class Racional {
     public void setDenominador(int denominador) {
         this.denominador = denominador;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Numero racional " + nominador + "/" + denominador;
+    }
+
+    public double suma(Racional objeto) {
+        double resultado = 0;
+        if (this.denominador == objeto.denominador) {
+            resultado = (this.nominador + objeto.nominador) / this.denominador;
+        } else {
+            resultado = ((this.nominador * objeto.denominador) + (this.denominador * objeto.nominador)) / (this.denominador * objeto.denominador);
+        }
+
+        return resultado;
+    }
+
+    public void producto(Racional objeto) {
+
+        this.nominador = this.nominador * objeto.nominador;
+        this.denominador = this.denominador * objeto.denominador;
+    }
 }
